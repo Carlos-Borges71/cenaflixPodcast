@@ -35,7 +35,7 @@ public class TelaPodcast extends javax.swing.JFrame {
         this.usuario = usuario;
         this.dao = new PodcastDAO(em);
         initComponents();
-        System.out.println(usuario.getTipo());
+        
         if (usuario.getTipo().equals("OPERADOR")) {
             btnExcluir.setEnabled(false);
         }
