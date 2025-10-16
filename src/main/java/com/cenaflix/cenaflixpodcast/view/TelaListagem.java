@@ -10,7 +10,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -43,12 +42,13 @@ public class TelaListagem extends javax.swing.JFrame {
         tblListagem.setModel(modelo);
         TableColumnModel columnModel = tblListagem.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(30);
-        columnModel.getColumn(2).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(200);
         columnModel.getColumn(3).setPreferredWidth(150);
         columnModel.getColumn(5).setPreferredWidth(150);
         carregarTabela();
 
         txtListagem.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 filtarTabela();
             }

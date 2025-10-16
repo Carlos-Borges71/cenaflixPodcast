@@ -50,7 +50,10 @@ public class PodcastDAO {
 
     public List<Podcast> listarTodos() {
 
-        return em.createQuery("FROM Podcast", Podcast.class).getResultList();
+        String jpql = "FROM Podcast";
+    var query = em.createQuery(jpql, Podcast.class);
+    var lista = query.getResultList();
+    return lista;
     }
 
     public List<Podcast> filtrarPorProdutor(String filtro) {
